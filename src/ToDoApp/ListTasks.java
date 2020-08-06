@@ -12,13 +12,17 @@ public class ListTasks {
       Path filePath =
           Paths.get("C:\\Users\\anhen\\Documents\\greenfox\\pfaniko-todo-app\\Tasks.txt");
       List<String> lines = Files.readAllLines(filePath);
-      int lineCounter = 1;
-      for (String line : lines) {
-        System.out.println(lineCounter + " - " + line);
-        lineCounter++;
+      if (lines.isEmpty()) {
+        System.out.println("No todos for today! :)");
+      } else {
+        int lineCounter = 1;
+        for (String line : lines) {
+          System.out.println(lineCounter + " - " + line);
+          lineCounter++;
+        }
       }
     } catch (IOException e) {
-      System.out.println("No such file exists");
+      e.printStackTrace();
     }
   }
 }
