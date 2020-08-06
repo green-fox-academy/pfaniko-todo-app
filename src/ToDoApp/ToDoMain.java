@@ -15,9 +15,13 @@ public class ToDoMain {
         if (arg.equals("-l")) {
           listTasks.listTasks();
         } else if (arg.startsWith("-a")) {
-          int indexArg = Arrays.asList(args).indexOf(arg);
-          String nextArg = args[indexArg + 1];
-          newTask.newTask(nextArg);
+          try {
+            int indexArg = Arrays.asList(args).indexOf(arg);
+            String nextArg = args[indexArg + 1];
+            newTask.newTask(nextArg);
+          } catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println("Unable to add: no task provided");
+          }
         }
       }
     }
