@@ -1,9 +1,12 @@
 package ToDoApp;
 
+import java.util.Arrays;
+
 public class ToDoMain {
   public static void main(String[] args) {
     PrintUsage printUsage = new PrintUsage();
     ListTasks listTasks = new ListTasks();
+    NewTask newTask = new NewTask();
 
     if (args.length == 0) {
       printUsage.printUsage();
@@ -11,6 +14,10 @@ public class ToDoMain {
       for (String arg : args) {
         if (arg.equals("-l")) {
           listTasks.listTasks();
+        } else if (arg.startsWith("-a")) {
+          int indexArg = Arrays.asList(args).indexOf(arg);
+          String nextArg = args[indexArg + 1];
+          newTask.newTask(nextArg);
         }
       }
     }
