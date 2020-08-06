@@ -7,6 +7,7 @@ public class ToDoMain {
     PrintUsage printUsage = new PrintUsage();
     ListTasks listTasks = new ListTasks();
     NewTask newTask = new NewTask();
+    RemoveTask removeTask = new RemoveTask();
 
     if (args.length == 0) {
       printUsage.printUsage();
@@ -14,7 +15,7 @@ public class ToDoMain {
       for (String arg : args) {
         if (arg.equals("-l")) {
           listTasks.listTasks();
-        } else if (arg.startsWith("-a")) {
+        } else if (arg.equals("-a")) {
           try {
             int indexArg = Arrays.asList(args).indexOf(arg);
             String nextArg = args[indexArg + 1];
@@ -22,6 +23,10 @@ public class ToDoMain {
           } catch (ArrayIndexOutOfBoundsException e) {
             System.out.println("Unable to add: no task provided");
           }
+        } else if (arg.equals("-r")) {
+          int indexArg = Arrays.asList(args).indexOf(arg) + 1;
+          int index = Integer.parseInt(args [indexArg]);
+          removeTask.removeTask(index);
         }
       }
     }
