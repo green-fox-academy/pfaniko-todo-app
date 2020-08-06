@@ -7,7 +7,7 @@ import java.nio.file.Paths;
 import java.util.List;
 
 public class ListTasks {
-  public static void main(String[] args) {
+  public void listTasks() {
     try {
       Path filePath =
           Paths.get("C:\\Users\\anhen\\Documents\\greenfox\\pfaniko-todo-app\\Tasks.txt");

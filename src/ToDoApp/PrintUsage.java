@@ -7,7 +7,7 @@ import java.nio.file.Paths;
 import java.util.List;
 
 public class PrintUsage {
-  public static void main(String[] args) {
+  public void printUsage() {
     try {
       Path filePath =
           Paths.get("C:\\Users\\anhen\\Documents\\greenfox\\pfaniko-todo-app\\UsageText.txt");
