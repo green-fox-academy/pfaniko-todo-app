@@ -14,7 +14,6 @@ public class RemoveTask {
       List<String> lines = Files.readAllLines(filePath);
       lines.remove(index);
       Files.write(filePath, lines);
-
     } catch (IOException e) {
       e.printStackTrace();
       System.out.println("File not found");

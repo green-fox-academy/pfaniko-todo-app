@@ -24,9 +24,17 @@ public class ToDoMain {
             System.out.println("Unable to add: no task provided");
           }
         } else if (arg.equals("-r")) {
-          int indexArg = Arrays.asList(args).indexOf(arg) + 1;
-          int index = Integer.parseInt(args [indexArg]);
-          removeTask.removeTask(index);
+          try {
+            int indexArg = Arrays.asList(args).indexOf(arg) + 1;
+            int index = Integer.parseInt(args[indexArg]);
+            removeTask.removeTask(index);
+          } catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println("Unable to remove: no index provided");
+          } catch (NumberFormatException e1) {
+            System.out.println("Unable to remove: index is not a number");
+          } catch (IndexOutOfBoundsException e3) {
+            System.out.println("Unable to remove: index is out of bound");
+          }
         }
       }
     }
