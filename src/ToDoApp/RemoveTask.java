@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class RemoveTask {
-  public void removeTask(int index) {
+  public static void removeTask(int index) {
     Path filePath =
         Paths.get("C:\\Users\\anhen\\Documents\\greenfox\\pfaniko-todo-app\\Assets\\Tasks.txt");
     List<String> lines = new ArrayList<>();

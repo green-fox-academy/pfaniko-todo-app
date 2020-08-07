@@ -4,25 +4,19 @@ import java.util.Arrays;
 
 public class ToDoMain {
   public static void main(String[] args) {
-    PrintUsage printUsage = new PrintUsage();
-    ListTasks listTasks = new ListTasks();
-    NewTask newTask = new NewTask();
-    RemoveTask removeTask = new RemoveTask();
-    CheckTask checkTask = new CheckTask();
-
     if (args.length == 0) {
-      printUsage.printUsage();
+      PrintUsage.printUsage();
     } else {
       for (String arg : args) {
         switch (arg) {
           case "-l":
-            listTasks.listTasks();
+            ListTasks.listTasks();
             break;
           case "-a":
             try {
               int indexArg = Arrays.asList(args).indexOf(arg);
               String nextArg = args[indexArg + 1];
-              newTask.newTask(nextArg);
+              NewTask.newTask(nextArg);
             } catch (ArrayIndexOutOfBoundsException e) {
               System.out.println("Unable to add: no task provided");
             }
@@ -31,7 +25,7 @@ public class ToDoMain {
             try {
               int indexArg = Arrays.asList(args).indexOf(arg) + 1;
               int index = Integer.parseInt(args[indexArg]);
-              removeTask.removeTask(index);
+              RemoveTask.removeTask(index);
             } catch (ArrayIndexOutOfBoundsException e) {
               System.out.println("Unable to remove: no index provided");
             } catch (NumberFormatException e) {
@@ -42,7 +36,7 @@ public class ToDoMain {
           case "-c":
             int indexArg = Arrays.asList(args).indexOf(arg) + 1;
             int index = Integer.parseInt(args[indexArg]);
-            checkTask.checkTask(index);
+            CheckTask.checkTask(index);
         }
       }
     }

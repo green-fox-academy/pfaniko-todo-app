@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class CheckTask {
-  public void checkTask(int index) {
+  public static void checkTask(int index) {
     Path filePath =
         Paths.get("C:\\Users\\anhen\\Documents\\greenfox\\pfaniko-todo-app\\Assets\\Tasks.txt");
     List<String> tasks = new ArrayList<>();
@@ -17,7 +17,7 @@ public class CheckTask {
       tasks = Files.readAllLines(filePath);
     } catch (
         IOException e) {
-      e.printStackTrace();
+      System.out.println("File not found");
     }
 
     String originalTask = tasks.get(index);

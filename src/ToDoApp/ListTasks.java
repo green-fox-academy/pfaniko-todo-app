@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ListTasks {
-  public void listTasks() {
+  public static void listTasks() {
     Path filePath =
         Paths.get("C:\\Users\\anhen\\Documents\\greenfox\\pfaniko-todo-app\\Assets\\Tasks.txt");
     List<String> tasks = new ArrayList<>();

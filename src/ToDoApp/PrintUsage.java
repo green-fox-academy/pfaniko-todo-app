@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PrintUsage {
-  public void printUsage() {
+  public static void printUsage() {
     Path filePath =
         Paths.get("C:\\Users\\anhen\\Documents\\greenfox\\pfaniko-todo-app\\Assets\\UsageText.txt");
     List<String> lines = new ArrayList<>();

@@ -7,7 +7,7 @@ import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 
 public class NewTask {
-  public void newTask(String string) {
+  public static void newTask(String string) {
     Path filePath =
         Paths.get("C:\\Users\\anhen\\Documents\\greenfox\\pfaniko-todo-app\\Assets\\Tasks.txt");
     String notDoneTask = "[ ] " + string + "\n";
