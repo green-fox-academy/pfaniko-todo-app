@@ -24,8 +24,8 @@ public class CheckTask {
     String checkedTask = "[x]" + originalTask.substring(3);
     tasks.set(index, checkedTask);
 
-
     try {
+      Files.deleteIfExists(filePath);
       Files.write(filePath, tasks);
     } catch (IOException e) {
       System.out.println("Can not write the file");
