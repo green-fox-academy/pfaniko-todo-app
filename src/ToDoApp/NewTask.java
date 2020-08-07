@@ -8,14 +8,16 @@ import java.nio.file.StandardOpenOption;
 
 public class NewTask {
   public void newTask(String string) {
+    Path filePath =
+        Paths.get("C:\\Users\\anhen\\Documents\\greenfox\\pfaniko-todo-app\\Assets\\Tasks.txt");
+    String notDoneTask = "[ ] " + string + "\n";
+
     try {
-      Path filePath =
-          Paths.get("C:\\Users\\anhen\\Documents\\greenfox\\pfaniko-todo-app\\Assets\\Tasks.txt");
-      String notDoneTask = "[ ] " + string + "\n";
       Files.write(filePath, notDoneTask.getBytes(), StandardOpenOption.APPEND);
     } catch (IOException e) {
       e.printStackTrace();
-      System.out.println("File not found");
     }
+
+    System.out.println("Can not write the file");
   }
 }
