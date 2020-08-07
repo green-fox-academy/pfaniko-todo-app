@@ -15,9 +15,7 @@ public class NewTask {
     try {
       Files.write(filePath, notDoneTask.getBytes(), StandardOpenOption.APPEND);
     } catch (IOException e) {
-      e.printStackTrace();
+      System.out.println("Can not write the file");
     }
-
-    System.out.println("Can not write the file");
   }
 }
