@@ -31,9 +31,17 @@ public class ToDoMain {
             System.out.println("Unable to remove: index is out of bound");
           }
         } else if (arg.equals("-c")) {
-          int indexArg = Arrays.asList(args).indexOf(arg) + 1;
-          int index = Integer.parseInt(args[indexArg]);
-          CheckTask.checkTask(index);
+          try {
+            int indexArg = Arrays.asList(args).indexOf(arg) + 1;
+            int index = Integer.parseInt(args[indexArg]);
+            CheckTask.checkTask(index);
+          } catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println("Unable to check: index is out of bound");
+          } catch (IndexOutOfBoundsException e) {
+            System.out.println("Unable to check: index is out of bound");
+          } catch (NumberFormatException e) {
+            System.out.println("Unable to check: index is not a number");
+          }
         }
       }
     }
