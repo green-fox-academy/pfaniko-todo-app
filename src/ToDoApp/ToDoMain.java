@@ -8,6 +8,7 @@ public class ToDoMain {
     ListTasks listTasks = new ListTasks();
     NewTask newTask = new NewTask();
     RemoveTask removeTask = new RemoveTask();
+    CheckTask checkTask = new CheckTask();
 
     if (args.length == 0) {
       printUsage.printUsage();
@@ -38,11 +39,10 @@ public class ToDoMain {
             } catch (IndexOutOfBoundsException e) {
               System.out.println("Unable to remove: index is out of bound");
             }
-            break;
-          default:
-            System.out.println("\nUnsupported argument\n");
-            printUsage.printUsage();
-            break;
+          case "-c":
+            int indexArg = Arrays.asList(args).indexOf(arg) + 1;
+            int index = Integer.parseInt(args[indexArg]);
+            checkTask.checkTask(index);
         }
       }
     }

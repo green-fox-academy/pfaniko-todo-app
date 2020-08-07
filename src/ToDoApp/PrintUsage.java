@@ -10,7 +10,7 @@ public class PrintUsage {
   public void printUsage() {
     try {
       Path filePath =
-          Paths.get("C:\\Users\\anhen\\Documents\\greenfox\\pfaniko-todo-app\\UsageText.txt");
+          Paths.get("C:\\Users\\anhen\\Documents\\greenfox\\pfaniko-todo-app\\Assets\\UsageText.txt");
       List<String> lines = Files.readAllLines(filePath);
       for (String line : lines) {
         System.out.println(line);

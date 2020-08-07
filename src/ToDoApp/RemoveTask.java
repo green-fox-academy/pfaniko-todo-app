@@ -10,7 +10,7 @@ public class RemoveTask {
   public void removeTask(int index) {
     try {
       Path filePath =
-          Paths.get("C:\\Users\\anhen\\Documents\\greenfox\\pfaniko-todo-app\\Tasks.txt");
+          Paths.get("C:\\Users\\anhen\\Documents\\greenfox\\pfaniko-todo-app\\Assets\\Tasks.txt");
       List<String> lines = Files.readAllLines(filePath);
       lines.remove(index);
       Files.write(filePath, lines);
