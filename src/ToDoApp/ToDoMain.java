@@ -13,28 +13,36 @@ public class ToDoMain {
       printUsage.printUsage();
     } else {
       for (String arg : args) {
-        if (arg.equals("-l")) {
-          listTasks.listTasks();
-        } else if (arg.equals("-a")) {
-          try {
-            int indexArg = Arrays.asList(args).indexOf(arg);
-            String nextArg = args[indexArg + 1];
-            newTask.newTask(nextArg);
-          } catch (ArrayIndexOutOfBoundsException e) {
-            System.out.println("Unable to add: no task provided");
-          }
-        } else if (arg.equals("-r")) {
-          try {
-            int indexArg = Arrays.asList(args).indexOf(arg) + 1;
-            int index = Integer.parseInt(args[indexArg]);
-            removeTask.removeTask(index);
-          } catch (ArrayIndexOutOfBoundsException e) {
-            System.out.println("Unable to remove: no index provided");
-          } catch (NumberFormatException e1) {
-            System.out.println("Unable to remove: index is not a number");
-          } catch (IndexOutOfBoundsException e3) {
-            System.out.println("Unable to remove: index is out of bound");
-          }
+        switch (arg) {
+          case "-l":
+            listTasks.listTasks();
+            break;
+          case "-a":
+            try {
+              int indexArg = Arrays.asList(args).indexOf(arg);
+              String nextArg = args[indexArg + 1];
+              newTask.newTask(nextArg);
+            } catch (ArrayIndexOutOfBoundsException e) {
+              System.out.println("Unable to add: no task provided");
+            }
+            break;
+          case "-r":
+            try {
+              int indexArg = Arrays.asList(args).indexOf(arg) + 1;
+              int index = Integer.parseInt(args[indexArg]);
+              removeTask.removeTask(index);
+            } catch (ArrayIndexOutOfBoundsException e) {
+              System.out.println("Unable to remove: no index provided");
+            } catch (NumberFormatException e) {
+              System.out.println("Unable to remove: index is not a number");
+            } catch (IndexOutOfBoundsException e) {
+              System.out.println("Unable to remove: index is out of bound");
+            }
+            break;
+          default:
+            System.out.println("\nUnsupported argument\n");
+            printUsage.printUsage();
+            break;
         }
       }
     }
